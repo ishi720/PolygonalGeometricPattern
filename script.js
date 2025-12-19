@@ -247,6 +247,30 @@ function draw() {
     drawMovingPoint(pos1, '#ff6b6b');
     drawMovingPoint(pos2, '#4ecdc4');
     drawMovingPoint(pos3, '#ffd93d');
+
+    // 反対側の点を描画（垂直線上で中心点の反対側）
+    // 元の点から中心点への距離を計算し、その分だけ法線方向に延長
+    const distToCenter1 = (CX - pos1.x) * pos1.nx + (CY - pos1.y) * pos1.ny;
+    const mirror1 = { 
+      x: pos1.x + 2 * distToCenter1 * pos1.nx, 
+      y: pos1.y + 2 * distToCenter1 * pos1.ny 
+    };
+    
+    const distToCenter2 = (CX - pos2.x) * pos2.nx + (CY - pos2.y) * pos2.ny;
+    const mirror2 = { 
+      x: pos2.x + 2 * distToCenter2 * pos2.nx, 
+      y: pos2.y + 2 * distToCenter2 * pos2.ny 
+    };
+    
+    const distToCenter3 = (CX - pos3.x) * pos3.nx + (CY - pos3.y) * pos3.ny;
+    const mirror3 = { 
+      x: pos3.x + 2 * distToCenter3 * pos3.nx, 
+      y: pos3.y + 2 * distToCenter3 * pos3.ny 
+    };
+    
+    drawMovingPoint(mirror1, '#ff6b6b');
+    drawMovingPoint(mirror2, '#4ecdc4');
+    drawMovingPoint(mirror3, '#ffd93d');
   }
   // 現在の交点をマーク
   drawCurrentIntersection(points1, '#ff69b4');
