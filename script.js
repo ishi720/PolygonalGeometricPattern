@@ -89,7 +89,7 @@ function getIntersection(p1, n1, p2, n2) {
 function updateBounce(t, dir, speed) {
   let newT = t + speed * dir;
   let newDir = dir;
-  
+
   if (newT >= 1) {
     newT = 1;
     newDir = -1;
@@ -97,7 +97,7 @@ function updateBounce(t, dir, speed) {
     newT = 0;
     newDir = 1;
   }
-  
+
   return { t: newT, dir: newDir };
 }
 
@@ -124,6 +124,21 @@ function drawActiveEdges() {
     ctx.beginPath();
     ctx.moveTo(edge.start.x, edge.start.y);
     ctx.lineTo(edge.end.x, edge.end.y);
+    ctx.strokeStyle = edge.color;
+    ctx.lineWidth = 4;
+    ctx.shadowColor = edge.color;
+    ctx.shadowBlur = 10;
+    ctx.stroke();
+    ctx.shadowBlur = 0;
+  });
+
+  // 反対側の3辺もハイライト描画（中心点を基準に反転）
+  edges.forEach(edge => {
+    const mirrorStart = { x: 2 * CX - edge.start.x, y: 2 * CY - edge.start.y };
+    const mirrorEnd = { x: 2 * CX - edge.end.x, y: 2 * CY - edge.end.y };
+    ctx.beginPath();
+    ctx.moveTo(mirrorStart.x, mirrorStart.y);
+    ctx.lineTo(mirrorEnd.x, mirrorEnd.y);
     ctx.strokeStyle = edge.color;
     ctx.lineWidth = 4;
     ctx.shadowColor = edge.color;
@@ -251,23 +266,23 @@ function draw() {
     // 反対側の点を描画（垂直線上で中心点の反対側）
     // 元の点から中心点への距離を計算し、その分だけ法線方向に延長
     const distToCenter1 = (CX - pos1.x) * pos1.nx + (CY - pos1.y) * pos1.ny;
-    const mirror1 = { 
-      x: pos1.x + 2 * distToCenter1 * pos1.nx, 
-      y: pos1.y + 2 * distToCenter1 * pos1.ny 
+    const mirror1 = {
+      x: pos1.x + 2 * distToCenter1 * pos1.nx,
+      y: pos1.y + 2 * distToCenter1 * pos1.ny
     };
-    
+
     const distToCenter2 = (CX - pos2.x) * pos2.nx + (CY - pos2.y) * pos2.ny;
-    const mirror2 = { 
-      x: pos2.x + 2 * distToCenter2 * pos2.nx, 
-      y: pos2.y + 2 * distToCenter2 * pos2.ny 
+    const mirror2 = {
+      x: pos2.x + 2 * distToCenter2 * pos2.nx,
+      y: pos2.y + 2 * distToCenter2 * pos2.ny
     };
-    
+
     const distToCenter3 = (CX - pos3.x) * pos3.nx + (CY - pos3.y) * pos3.ny;
-    const mirror3 = { 
-      x: pos3.x + 2 * distToCenter3 * pos3.nx, 
-      y: pos3.y + 2 * distToCenter3 * pos3.ny 
+    const mirror3 = {
+      x: pos3.x + 2 * distToCenter3 * pos3.nx,
+      y: pos3.y + 2 * distToCenter3 * pos3.ny
     };
-    
+
     drawMovingPoint(mirror1, '#ff6b6b');
     drawMovingPoint(mirror2, '#4ecdc4');
     drawMovingPoint(mirror3, '#ffd93d');
@@ -328,12 +343,6 @@ function animate() {
   draw();
   requestAnimationFrame(animate);
 }
-
-
-function guideShow() {
-  
-}
-
 
 /**
  * 軌跡をクリア
