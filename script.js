@@ -154,28 +154,20 @@ function drawActiveEdges() {
 function drawTrail(points, color) {
   if (points.length < 2) return;
 
-  // 線を描画
-  ctx.beginPath();
-  ctx.moveTo(points[0].x, points[0].y);
+  // セグメントごとに描画（古いほど細く、半透明に）
   for (let i = 1; i < points.length; i++) {
-    ctx.lineTo(points[i].x, points[i].y);
-  }
-  ctx.strokeStyle = color;
-  ctx.lineWidth = 2;
-  ctx.globalAlpha = 0.7;
-  ctx.stroke();
-  ctx.globalAlpha = 1;
+    const progress = i / points.length; // 0に近いほど古い、1に近いほど新しい
+    const lineWidth = 0.5 + progress * 5; // 0.5 → 3
+    const alpha = 0.1 + progress * 0.6; // 0.1 → 0.7
 
-  // 点を描画
-  points.forEach((p, i) => {
-    const alpha = 0.3 + (i / points.length) * 0.7;
-    const r = 1 + (i / points.length) * 2;
     ctx.beginPath();
-    ctx.arc(p.x, p.y, r, 0, Math.PI * 2);
-    ctx.fillStyle = color;
+    ctx.moveTo(points[i - 1].x, points[i - 1].y);
+    ctx.lineTo(points[i].x, points[i].y);
+    ctx.strokeStyle = color;
+    ctx.lineWidth = lineWidth;
     ctx.globalAlpha = alpha;
-    ctx.fill();
-  });
+    ctx.stroke();
+  }
   ctx.globalAlpha = 1;
 }
 
