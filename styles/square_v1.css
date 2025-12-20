@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #0f0f1a 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  font-family: 'Courier New', monospace;
+}
+
+h1 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #ffd93d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+#canvas {
+  background: radial-gradient(circle at center, #1a1a2e 0%, #0a0a0f 100%);
+  border-radius: 5px;
+  box-shadow: 0 0 20px rgba(78, 205, 196, 0.2), inset 0 0 60px rgba(0,0,0,0.5);
+  max-width: 100%;
+  height: auto;
+}
+
+/* コントロールボタン */
+.controls {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+button {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  letter-spacing: 0.1em;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  transition: transform 0.2s;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+#playBtn {
+  background: linear-gradient(135deg, #ff6b6b, #ee5a5a);
+}
+
+#playBtn.paused {
+  background: linear-gradient(135deg, #4ecdc4, #45b7d1);
+}
+
+#guideBtn {
+  background: linear-gradient(135deg, #3d61ff, #2945e6);
+}
+#guideBtn.active {
+  background: linear-gradient(135deg, #ffb93d, #e68f29);
+}
+
+/* スライダー */
+.sliders {
+  margin-top: 20px;
+  max-width: 400px;
+}
+
+.slider-group {
+  text-align: center;
+}
+
+.slider-group label {
+  display: inline;
+  margin-bottom: 8px;
+  font-size: 0.85rem;
+}
+
+.slider-group:nth-child(1) label { color: #ff6b6b; }
+.slider-group:nth-child(2) label { color: #4ecdc4; }
+.slider-group:nth-child(3) label { color: #ffd93d; }
+
+input[type="range"] {
+  cursor: pointer;
+  max-width: 300px;
+  margin: 8px 0 16px 0;
+}
