@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 h1 {
   font-size: 1.8rem;
   margin-bottom: 15px;
@@ -22,37 +24,6 @@ h1 {
   gap: 20px;
   flex-wrap: wrap;
   justify-content: center;
-}
-
-button {
-  padding: 12px 30px;
-  border: none;
-  border-radius: 5px;
-  color: #fff;
-  font-size: 1rem;
-  cursor: pointer;
-  letter-spacing: 0.1em;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-  transition: transform 0.2s;
-}
-
-button:hover {
-  transform: scale(1.05);
-}
-
-#playBtn {
-  background: linear-gradient(135deg, #ff6b6b, #ee5a5a);
-}
-
-#playBtn.paused {
-  background: linear-gradient(135deg, #4ecdc4, #45b7d1);
-}
-
-#guideBtn {
-  background: linear-gradient(135deg, #3d61ff, #2945e6);
-}
-#guideBtn.active {
-  background: linear-gradient(135deg, #ffb93d, #e68f29);
 }
 
 /* スライダー */
