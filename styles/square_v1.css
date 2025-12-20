@@ -8,29 +8,3 @@ h1 {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
-
-/* スライダー */
-.sliders {
-  margin-top: 20px;
-  max-width: 400px;
-}
-
-.slider-group {
-  text-align: center;
-}
-
-.slider-group label {
-  display: inline;
-  margin-bottom: 8px;
-  font-size: 0.85rem;
-}
-
-.slider-group:nth-child(1) label { color: #ff6b6b; }
-.slider-group:nth-child(2) label { color: #4ecdc4; }
-.slider-group:nth-child(3) label { color: #ffd93d; }
-
-input[type="range"] {
-  cursor: pointer;
-  max-width: 300px;
-  margin: 8px 0 16px 0;
-}
