@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hexagonal Geometric Patterns</title>
+  <title>Polygonal Geometric Patterns</title>
   <style>
     * {
       margin: 0;
@@ -82,6 +82,18 @@
       color: #4ecdc4;
     }
 
+    .icon-square {
+      font-size: 8rem;
+      opacity: 0.8;
+      color: #ff6b6b;
+    }
+
+    .icon-pentagon {
+      font-size: 8rem;
+      opacity: 0.8;
+      color: #a855f7;
+    }
+
     .tags {
       display: flex;
       gap: 8px;
@@ -99,6 +111,12 @@
       background: rgba(255, 255, 255, 0.1);
     }
     .hexagon {
+      background: linear-gradient(135deg, #4ecdc4, #45b7d1);
+    }
+    .pentagon {
+      background: linear-gradient(135deg, #a855f7, #9333ea);
+    }
+    .square {
       background: linear-gradient(135deg, #ff6b6b, #ee5a5a);
     }
 
@@ -110,10 +128,21 @@
   <div class="gallery">
     <a href="square/v1/index.html" class="card">
       <div class="preview">
-        <span class="icon">□</span>
+        <span class="icon-square">◇</span>
       </div>
       <div class="tags">
         <span class="tag square">四角形</span>
+        <span class="tag v1">v1</span>
+      </div>
+      <p>辺から垂直に伸びる線の交点が描く軌跡。</p>
+    </a>
+
+    <a href="pentagon/v1/index.html" class="card">
+      <div class="preview">
+        <span class="icon-pentagon">⬠</span>
+      </div>
+      <div class="tags">
+        <span class="tag pentagon">五角形</span>
         <span class="tag v1">v1</span>
       </div>
       <p>辺から垂直に伸びる線の交点が描く軌跡。</p>
