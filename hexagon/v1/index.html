@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hexagonal geometric pattern v1</title>
+  <link rel="stylesheet" href="../../styles/hexagon_v1.css">
+</head>
+<body>
+  <h1>Hexagonal geometric pattern v1</h1>
+
+  <canvas id="canvas" width="800" height="800"></canvas>
+
+  <div class="sliders">
+    <div class="slider-group">
+      <label>🔴</label>
+      <input type="range" id="speed1" min="0.002" max="0.03" step="0.001" value="0.008">
+    </div>
+    <div class="slider-group">
+      <label>🔵</label>
+      <input type="range" id="speed2" min="0.002" max="0.03" step="0.001" value="0.011">
+    </div>
+    <div class="slider-group">
+      <label>🟡</label>
+      <input type="range" id="speed3" min="0.002" max="0.03" step="0.001" value="0.015">
+    </div>
+  </div>
+
+  <div class="controls">
+    <button id="playBtn">停止</button>
+    <button id="guideBtn">ガイド切替ON</button>
+  </div>
+
+  <script src="../../scripts/hexagon_v1.js"></script>
+</body>
+</html>
