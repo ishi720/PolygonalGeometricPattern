@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Square geometric pattern v2</title>
+  <link rel="stylesheet" href="../../styles/square_v2.css">
+</head>
+<body>
+  <h1>Square geometric pattern v2</h1>
+
+  <canvas id="canvas" width="800" height="800"></canvas>
+
+  <div class="sliders">
+    <div class="slider-row">
+      <div class="slider-group">
+        <label>●1 上</label>
+        <input type="range" id="speed1" min="0.002" max="0.03" step="0.001" value="0.005">
+      </div>
+      <div class="slider-group">
+        <label>●2 右</label>
+        <input type="range" id="speed2" min="0.002" max="0.03" step="0.001" value="0.007">
+      </div>
+    </div>
+    <div class="slider-row">
+      <div class="slider-group">
+        <label>●3 下</label>
+        <input type="range" id="speed3" min="0.002" max="0.03" step="0.001" value="0.009">
+      </div>
+      <div class="slider-group">
+        <label>●4 左</label>
+        <input type="range" id="speed4" min="0.002" max="0.03" step="0.001" value="0.011">
+      </div>
+    </div>
+  </div>
+
+  <div class="controls">
+    <button id="playBtn">停止</button>
+    <button id="guideBtn">ガイド切替ON</button>
+  </div>
+
+  <script src="../../scripts/square_v2.js"></script>
+</body>
+</html>
