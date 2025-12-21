@@ -64,7 +64,7 @@ h1 {
 .icon-triangle {
     font-size: 8rem;
     opacity: 0.8;
-    color: #4ecdc4;
+    color: #dab745;
 }
 
 .icon-square {
@@ -101,14 +101,17 @@ h1 {
     color: #fff;
     background: rgba(255, 255, 255, 0.1);
 }
-.hexagon {
-    background: linear-gradient(135deg, #4ecdc4, #45b7d1);
+.triangle {
+    background: linear-gradient(135deg, #dab745, #d4b60c);
+}
+.square {
+    background: linear-gradient(135deg, #ff6b6b, #ee5a5a);
 }
 .pentagon {
     background: linear-gradient(135deg, #a855f7, #9333ea);
 }
-.square {
-    background: linear-gradient(135deg, #ff6b6b, #ee5a5a);
+.hexagon {
+    background: linear-gradient(135deg, #4ecdc4, #45b7d1);
 }
 .octagon {
     background: linear-gradient(135deg, #f97316, #ea580c);
